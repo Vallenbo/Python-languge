@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="cn-zh">
+<head>
+    <meta charset="UTF-8">
+    <title>同学录</title>
+</head>
+
+<body>
+<center>
+    <h1>mysql同学录</h1>
+    <h2><a href="/lyb">留言板信息</a> | <a href="/translate">在线中英翻译</a></h2>
+    <a href="/add/">添加记录</a>
+    <hr>
+    <table border="4px" width="1200px">
+        <tr style="text-align:center">
+            <th>学号</th>
+            <th>姓名</th>
+            <th>年龄</th>
+            <th>性别</th>
+            <th>班级</th>
+            <th>电话</th>
+            <th>家庭地址</th>
+            <th>操作</th>
+        </tr>
+        {% for i in userlist %}
+        <tr style="text-align:center">
+            <td>{{ i.id }}</td>
+            <td>{{ i.name }}</td>
+            <td>{{ i.age }}</td>
+            <td>{{ i.sex }}</td>
+            <td>{{ i.class }}</td>
+            <td>{{ i.tel_num }}</td>
+            <td>{{ i.adds }}</td>
+            <td><a href="/del?id={{ i.id }}">删除</a> | <a href="/change?id={{ i.id }}">更改</a></td>
+        </tr>
+        {% endfor %}
+    </table>
+</center>
+
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>翻译</title>
+</head>
+<body>
+<center>
+    <table>
+        <form action="/translates" method="post">
+            <h1>在线中英文翻译</h1>
+            <script type="text/javascript">
+                document.write(Date());
+            </script>
+            <h3><a href="/">返回首页</a></h3>
+            <tr>
+                <td>翻译框:</td>
+                <td>
+                    <textarea name="info" id="" cols="100" rows="10">{{recode.info}}</textarea>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                <th>
+                    <button>翻译</button>
+                </th>
+                </td>
+            </tr>
+        </form>
+    </table>
+    <table border="4px" width="1000px">
+        <tr style="text-align:center">
+            <th>汉字翻译及相近字</th>
+            <th>翻译内容</th>
+        </tr>
+        {% for i in data %}
+        <tr style="text-align:center">
+            <td>{{ i.k }}</td>
+            <td>{{ i.v }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</center>
+</body>
+</html>

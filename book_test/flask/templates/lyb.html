@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>留言板列表</title>
+</head>
+<body>
+<center>
+    <h1>留言板</h1>
+    当前时间:
+    <script type="text/javascript">
+        document.write(Date());
+    </script>
+    <h3><a href="/insert">发布留言</a> | <a href="/">返回首页</a></h3>
+    <table border="3" width="1000">
+        <tr>
+            <th>ID编号</th>
+            <th>昵称</th>
+            <th>留言信息</th>
+            <th>留言时间</th>
+        </tr>
+        {% for i in lyb %}
+        <tr>
+            <td>{{i.id}}</td>
+            <td>{{i.name}}</td>
+            <td>{{i.info}}</td>
+            <td>{{i.datatime}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</center>
+</body>
+</html>
+
+
